@@ -1,5 +1,6 @@
 import Navigation from './components/Navigation/script';
-import Logo
+import Logo from './components/Logo/script';
+
 
 export default function App() {
   return (
