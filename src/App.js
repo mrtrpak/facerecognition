@@ -1,9 +1,8 @@
-import './App.css';
-import Navigation from  './components/Navigation';
+import Navigation from './components/Navigation/script';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <div>
       <Navigation />
       {/* <Logo />
       <ImageLinkForm />
@@ -11,5 +10,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
