@@ -7,23 +7,22 @@ import Rank from "./components/Rank/script";
 
 import './App.css';
 
+const particlesOptions = {
+  particles: {
+    line_linked: {
+      shadow: {
+        enable: true,
+        color: '#3CA9D1',
+        blur: 3
+      }
+    }
+  }
+}
 
 export default function App() {
   return (
     <div>
-      <Particles 
-        params={{
-          particles: {
-            line_linked: {
-              shadow: {
-                enable: true,
-                color: '#3CA9D1',
-                blur: 3
-              }
-            }
-          }
-        }} 
-      />
+      <Particles params={{ particlesOptions }} />
       <Navigation />
       <Logo />
       <Rank />
