@@ -22,7 +22,7 @@ const particlesOptions = {
 export default function App() {
   return (
     <div>
-      <Particles params={{ particlesOptions }} />
+      <Particles className="particles" params={{ particlesOptions }} />
       <Navigation />
       <Logo />
       <Rank />
