@@ -9,6 +9,9 @@ import './App.css';
 
 const particlesOptions = {
   particles: {
+    Number: {
+      value: 300
+    },
     line_linked: {
       shadow: {
         enable: true,
