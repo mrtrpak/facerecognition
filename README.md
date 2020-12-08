@@ -5,6 +5,7 @@
 - create-react-app
 - http://projects.verou.me/css3patterns/
 - react-particles
+- clarifai
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
