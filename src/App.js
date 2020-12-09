@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import ImageLinkForm from './components/ImageLinkForm/script';
 import Logo from './components/Logo/script';
@@ -22,14 +22,18 @@ const particlesOptions = {
   }
 }
 
-export default function App() {
-  return (
-    <div>
-      <Particles className="particles" params={{ particlesOptions }} />
-      <Navigation />
-      <Logo />
-      <Rank />
-      <ImageLinkForm />
-    </div>
-  );
-}
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Particles className="particles" params={{ particlesOptions }} />
+        <Navigation />
+        <Logo />
+        <Rank />
+        <ImageLinkForm />
+      </div>
+    );
+  };
+};
+
+export default App;
