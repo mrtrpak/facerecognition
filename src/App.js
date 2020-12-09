@@ -23,6 +23,17 @@ const particlesOptions = {
 }
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      input: ''
+    }
+  }
+
+  onInputChange = event => {
+    console.log(event);
+  };
+
   render() {
     return (
       <div>
@@ -30,7 +41,7 @@ class App extends Component {
         <Navigation />
         <Logo />
         <Rank />
-        <ImageLinkForm />
+        <ImageLinkForm onInputChange={this.onInputChange} />
       </div>
     );
   };
