@@ -10,7 +10,7 @@ import './App.css';
 const particlesOptions = {
   particles: {
     Number: {
-      value: 300
+      value: 30
     },
     line_linked: {
       shadow: {
@@ -34,6 +34,10 @@ class App extends Component {
     console.log(event.target.value);
   };
 
+  onBtnClick = () => {
+    console.log('click');
+  }
+
   render() {
     return (
       <div>
@@ -41,7 +45,10 @@ class App extends Component {
         <Navigation />
         <Logo />
         <Rank />
-        <ImageLinkForm onInputChange={this.onInputChange} />
+        <ImageLinkForm 
+          onInputChange={this.onInputChange} 
+          onSubmit={this.onBtnClick} 
+        />
       </div>
     );
   };
