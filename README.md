@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# The Brain Face Detector
+
+## Summary
+
+- Enter an image url for the brain to do it's magic. It will detect all of the faces in the image and outline them.
 
 ## Tools Used
 
