@@ -1,5 +1,11 @@
 # The Brain Face Detector
 
+# Table of Contents
+- [Summary](#Summary)
+- [Tools Used](#Tools-Used)
+- [Photos](#Photos)
+- [Gif](#Gif)
+
 ## Summary
 
 - Enter an image url for the brain to do it's magic. It will detect all of the faces in the image and outline them.
@@ -13,7 +19,7 @@
 
 ## Photos
 
-## Gifs
+## Gif
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
