@@ -3,6 +3,7 @@
 # Table of Contents
 - [Summary](#Summary)
 - [Tools Used](#Tools-Used)
+- [Getting Started](#Getting-Started)
 - [Photos](#Photos)
 - [Gif](#Gif)
 
@@ -16,6 +17,8 @@
 - http://projects.verou.me/css3patterns/
 - react-particles
 - clarifai
+
+## Getting Started
 
 ## Photos
 
