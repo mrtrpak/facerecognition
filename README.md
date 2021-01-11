@@ -11,6 +11,8 @@
 
 - Enter an image url for the brain to do it's magic. It will detect all of the faces in the image and outline them.
 
+## Goals
+
 ## Tools Used
 
 - create-react-app
