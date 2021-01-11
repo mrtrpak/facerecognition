@@ -14,6 +14,10 @@
 
 ## Goals
 
+- Create a full stack application
+- Publish application to the web
+- Successfully implement API
+
 ## Tools Used
 
 - create-react-app
