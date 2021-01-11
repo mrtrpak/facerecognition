@@ -2,6 +2,7 @@
 
 # Table of Contents
 - [Summary](#Summary)
+- [Goals](#Goals)
 - [Tools Used](#Tools-Used)
 - [Getting Started](#Getting-Started)
 - [Photos](#Photos)
