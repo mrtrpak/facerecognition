@@ -17,6 +17,8 @@
 - Create a full stack application
 - Publish application to the web
 - Successfully implement API
+- User sign in and out
+
 
 ## Tools Used
 
