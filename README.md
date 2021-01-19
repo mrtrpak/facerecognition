@@ -1,6 +1,7 @@
 # The Brain Face Detector
 
 # Table of Contents
+
 - [Summary](#Summary)
 - [Goals](#Goals)
 - [Tools Used](#Tools-Used)
@@ -18,7 +19,7 @@
 - Publish application to the web
 - Successfully implement API
 - User sign in and out
-
+- Clean UI with particle effect
 
 ## Tools Used
 
