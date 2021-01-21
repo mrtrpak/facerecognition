@@ -4,7 +4,6 @@ import ImageLinkForm from './components/ImageLinkForm/script';
 import Logo from './components/Logo/script';
 import Navigation from './components/Navigation/script';
 import Rank from './components/Rank/script';
-import FaceRecognition from './components/FaceRecognition/script';
 import Clarifai from 'clarifai';
 
 import './App.css';
@@ -31,6 +30,7 @@ const particlesOptions = {
 class App extends Component {
   constructor() {
     super();
+    this.wrapper = React.createRef();
     this.state = {
       input: ''
     }
@@ -41,7 +41,7 @@ class App extends Component {
   };
 
   onBtnClick = () => {
-    app.models.predict( app.apiKey, "https://samples.clarifai.com").then(
+    app.models.predict( '6d9e77c307e7456c99a5880de9d3a24e', "https://thumbs.dreamstime.com/b/composite-multiple-female-faces-looking-camera-smiling-169175698.jpg").then(
 
       function(response) {
         console.log(response);
@@ -54,7 +54,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div ref={this.wrapper}>
         <Particles className="particles" params={{ particlesOptions }} />
         <Navigation />
         <Logo />
@@ -63,7 +63,6 @@ class App extends Component {
           onInputChange={this.onInputChange} 
           onSubmit={this.onBtnClick} 
         />
-        <FaceRecognition />
       </div>
     );
   };

@@ -4,7 +4,7 @@ import Tilt from 'react-tilt';
 import photo from '../../assets/brainLogo.png';
 import './style.css';
 
-export default function Logo() {
+const Logo = () => {
   return (
     <div className='ma4 mt0'>
       <Tilt className='Tilt br3 shadow-3 centerAlign mainBackground' options={{ max: 70 }} style={{ height: 200, width: 200 }}>
@@ -15,3 +15,5 @@ export default function Logo() {
     </div>
   );
 };
+
+export default Logo;
