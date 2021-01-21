@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './style.css';
+
 const ImageDetector = () => {
   return (
     <div className='center'>
