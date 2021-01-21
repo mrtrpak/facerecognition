@@ -4,6 +4,7 @@ import ImageLinkForm from './components/ImageLinkForm/script';
 import Logo from './components/Logo/script';
 import Navigation from './components/Navigation/script';
 import Rank from './components/Rank/script';
+import FaceRecognition from './components/FaceRecognition/script';
 import Clarifai from 'clarifai';
 
 import './App.css';
@@ -62,6 +63,7 @@ class App extends Component {
           onInputChange={this.onInputChange} 
           onSubmit={this.onBtnClick} 
         />
+        <FaceRecognition />
       </div>
     );
   };
