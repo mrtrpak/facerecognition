@@ -2,8 +2,8 @@ import React from 'react';
 
 const ImageDetector = () => {
   return (
-    <div>
-
+    <div className='center'>
+      <img src={'https://thumbs.dreamstime.com/b/composite-multiple-female-faces-looking-camera-smiling-169175698.jpg'} alt="none showing" />
     </div>
   );
 };
