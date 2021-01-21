@@ -4,8 +4,13 @@ import ImageLinkForm from './components/ImageLinkForm/script';
 import Logo from './components/Logo/script';
 import Navigation from './components/Navigation/script';
 import Rank from "./components/Rank/script";
+import Clarifai from ('clarifai');
 
 import './App.css';
+
+const app = new Clarifai.App({
+  apiKey: '6d9e77c307e7456c99a5880de9d3a24e'
+});
 
 const particlesOptions = {
   particles: {
@@ -20,7 +25,7 @@ const particlesOptions = {
       }
     }
   }
-}
+};
 
 class App extends Component {
   constructor() {
@@ -28,17 +33,17 @@ class App extends Component {
     this.state = {
       input: ''
     }
-  }
+  };
 
   onInputChange = event => {
     console.log(event.target.value);
   };
 
   onBtnClick = () => {
-    app.models.predict("6d9e77c307e7456c99a5880de9d3a24e", "https://cdn.aarp.net/content/dam/aarp/home-and-family/personal-technology/2019/04/1140-digitize-photos.jpg").then(
+    app.models.predict({ apiKey }, "https://samples.clarifai.com").then(
 
       function(response) {
-        
+        console.log(response);
       },
       function(err) {
         
