@@ -3,8 +3,8 @@ import Particles from 'react-particles-js';
 import ImageLinkForm from './components/ImageLinkForm/script';
 import Logo from './components/Logo/script';
 import Navigation from './components/Navigation/script';
-import Rank from "./components/Rank/script";
-import Clarifai from ('clarifai');
+import Rank from './components/Rank/script';
+import Clarifai from 'clarifai';
 
 import './App.css';
 
@@ -40,7 +40,7 @@ class App extends Component {
   };
 
   onBtnClick = () => {
-    app.models.predict({ apiKey }, "https://samples.clarifai.com").then(
+    app.models.predict( app.apiKey, "https://samples.clarifai.com").then(
 
       function(response) {
         console.log(response);
