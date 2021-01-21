@@ -35,8 +35,16 @@ class App extends Component {
   };
 
   onBtnClick = () => {
-    console.log('click');
-  }
+    app.models.predict("6d9e77c307e7456c99a5880de9d3a24e", "https://cdn.aarp.net/content/dam/aarp/home-and-family/personal-technology/2019/04/1140-digitize-photos.jpg").then(
+
+      function(response) {
+        
+      },
+      function(err) {
+        
+      }
+    );
+  };
 
   render() {
     return (
