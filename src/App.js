@@ -45,15 +45,16 @@ class App extends Component {
   };
 
   onBtnClick = () => {
-    this.setState({ imageUrl: this.state.input })
-    app.models.predict( Clarifai.COLOR_MODEL, "https://thumbs.dreamstime.com/b/composite-multiple-female-faces-looking-camera-smiling-169175698.jpg").then(
+    this.setState({ imageUrl: this.state.input });
 
-      function(response) {
-        console.log(response);
-      },
-      function(err) {
-        
-      }
+    app.models.predict( 
+      Clarifai.COLOR_MODEL, this.state.input).then(
+        function(response) {
+          console.log(response);
+        },
+        function(err) {
+          throw err;
+        }
     );
   };
 
