@@ -48,9 +48,9 @@ class App extends Component {
     this.setState({ imageUrl: this.state.input });
 
     app.models.predict( 
-      Clarifai.COLOR_MODEL, this.state.input).then(
+      Clarifai.FACE_DETECT_MODEL, this.state.input).then(
         function(response) {
-          console.log(response.outputs[0].data);
+          console.log(response);
         },
         function(err) {
           throw err;
