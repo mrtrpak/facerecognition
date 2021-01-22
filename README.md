@@ -20,6 +20,8 @@
 - Successfully implement API
 - User sign in and out
 - Clean UI with particle effect
+- Display image given by the user on the webpage
+- outline the faces using the API as a baseline
 
 ## Tools Used
 
