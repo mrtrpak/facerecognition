@@ -33,7 +33,8 @@ class App extends Component {
     super();
     this.wrapper = React.createRef();
     this.state = {
-      input: ''
+      input: '',
+      imageUrl: ''
     }
   };
 
@@ -42,7 +43,8 @@ class App extends Component {
   };
 
   onBtnClick = () => {
-    app.models.predict( '6d9e77c307e7456c99a5880de9d3a24e', "https://thumbs.dreamstime.com/b/composite-multiple-female-faces-looking-camera-smiling-169175698.jpg").then(
+    this.setState({ imageUrl: this.state.input })
+    app.models.predict( Clarifai.COLOR_MODEL, "https://thumbs.dreamstime.com/b/composite-multiple-female-faces-looking-camera-smiling-169175698.jpg").then(
 
       function(response) {
         console.log(response);
@@ -64,7 +66,7 @@ class App extends Component {
           onInputChange={this.onInputChange} 
           onSubmit={this.onBtnClick} 
         />
-        <ImageDetector />
+        <ImageDetector imageUrl={this.state.imageUrl} />
       </div>
     );
   };

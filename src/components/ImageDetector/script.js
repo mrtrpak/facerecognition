@@ -2,10 +2,10 @@ import React from 'react';
 
 import './style.css';
 
-const ImageDetector = () => {
+const ImageDetector = ({ imageUrl }) => {
   return (
     <div className='centerAlign'>
-      <img src={'https://thumbs.dreamstime.com/b/composite-multiple-female-faces-looking-camera-smiling-169175698.jpg'} alt="none showing" />
+      <img src={imageUrl} alt="none showing" />
     </div>
   );
 };
