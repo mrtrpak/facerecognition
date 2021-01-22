@@ -7,10 +7,12 @@ import Rank from './components/Rank/script';
 import ImageDetector from './components/ImageDetector/script';
 import Clarifai from 'clarifai';
 
+import { apiKey } from "./assets/hidden";
+
 import './App.css';
 
 const app = new Clarifai.App({
-  apiKey: '6d9e77c307e7456c99a5880de9d3a24e'
+  apiKey: apiKey
 });
 
 const particlesOptions = {
@@ -39,7 +41,7 @@ class App extends Component {
   };
 
   onInputChange = event => {
-    console.log(event.target.value);
+    this.setState({ input: event.target.value })
   };
 
   onBtnClick = () => {
