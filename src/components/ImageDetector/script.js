@@ -5,7 +5,6 @@ import './style.css';
 const defaultGif = "https://media.giphy.com/media/l41m04gr7tRet7Uas/giphy.gif"
 
 const ImageDetector = ({ imageUrl }) => {
-  console.log(imageUrl);
   return (
     <div className='centerAlign'>
       <img src={imageUrl || defaultGif} alt="none showing" />
