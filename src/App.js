@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
+import Clarifai from 'clarifai';
+
 import ImageLinkForm from './components/ImageLinkForm/script';
 import Logo from './components/Logo/script';
 import Navigation from './components/Navigation/script';
 import Rank from './components/Rank/script';
 import ImageDetector from './components/ImageDetector/script';
-import Clarifai from 'clarifai';
+
+import './App.css';
 
 import { apiKey } from "./assets/hidden";
 
-import './App.css';
 
 const app = new Clarifai.App({
   apiKey: apiKey
