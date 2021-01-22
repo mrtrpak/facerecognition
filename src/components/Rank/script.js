@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Rank() {
+const Rank = () => {
   return (
     <div className='centerAlign'>
       <div className='white f3'>
@@ -12,3 +12,5 @@ export default function Rank() {
     </div>
   );
 };
+
+export default Rank;
