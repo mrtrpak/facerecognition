@@ -2,10 +2,13 @@ import React from 'react';
 
 import './style.css';
 
+const defaultGif = "https://media.giphy.com/media/l41m04gr7tRet7Uas/giphy.gif"
+
 const ImageDetector = ({ imageUrl }) => {
+  console.log(imageUrl);
   return (
     <div className='centerAlign'>
-      <img src={imageUrl} alt="none showing" />
+      <img src={imageUrl || defaultGif} alt="none showing" />
     </div>
   );
 };
