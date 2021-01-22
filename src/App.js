@@ -50,7 +50,7 @@ class App extends Component {
     app.models.predict( 
       Clarifai.COLOR_MODEL, this.state.input).then(
         function(response) {
-          console.log(response);
+          console.log(response.outputs[0].data);
         },
         function(err) {
           throw err;
