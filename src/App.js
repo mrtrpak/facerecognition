@@ -50,15 +50,15 @@ class App extends Component {
     this.setState({ input: event.target.value })
   };
 
-  onBtnClick = () => {
+  onBtnSubmit = () => {
     this.setState({ imageUrl: this.state.input });
 
-    app.models.predict( 
-      Clarifai.FACE_DETECT_MODEL, this.state.input)
-      .then(
-        response => this.calculateFaceLocation(response)
-      .catch(err => console.log(err))
-    );
+    app.models
+      .predict( 
+        Clarifai.FACE_DETECT_MODEL, 
+        this.state.input)
+      .then(response => this.calculateFaceLocation(response))
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -70,7 +70,7 @@ class App extends Component {
         <Rank />
         <ImageLinkForm 
           onInputChange={this.onInputChange} 
-          onSubmit={this.onBtnClick} 
+          onSubmit={this.onBtnSubmit} 
         />
         <ImageDetector imageUrl={this.state.imageUrl} />
       </div>
