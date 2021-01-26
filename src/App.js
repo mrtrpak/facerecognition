@@ -43,20 +43,21 @@ class App extends Component {
   };
 
   calculateFaceLocation = data => {
-    const ClarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById('inputImage');
     const width = Number(image.width);
     const height = Number(image.height);
 
     return {
-      leftCol: ClarifaiFace.left_col * width,
-      topRow: ClarifaiFace.top_row * height,
+      leftCol: clarifaiFace.left_col * width,
+      topRow: clarifaiFace.top_row * height,
       rightCol: width - (clarifaiFace.rigth_col * width),
-      bottomRow: height - (ClarifaiFace.botttom_row * height)
+      bottomRow: height - (clarifaiFace.botttom_row * height)
     }
   }
 
   displayFaceBox = box => {
+    console.log(box);
     this.setState({ box });
   }
 
