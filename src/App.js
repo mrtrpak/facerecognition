@@ -37,9 +37,14 @@ class App extends Component {
     super();
     this.state = {
       input: '',
-      imageUrl: ''
+      imageUrl: '',
+      box: {}
     }
   };
+
+  calculateFaceLocation = data => {
+    
+  }
 
   onInputChange = event => {
     this.setState({ input: event.target.value })
