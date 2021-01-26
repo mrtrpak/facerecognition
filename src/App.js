@@ -43,7 +43,8 @@ class App extends Component {
   };
 
   calculateFaceLocation = data => {
-
+    const ClarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+    
   }
 
   onInputChange = event => {
