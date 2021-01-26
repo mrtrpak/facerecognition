@@ -35,7 +35,6 @@ const particlesOptions = {
 class App extends Component {
   constructor() {
     super();
-    this.wrapper = React.createRef();
     this.state = {
       input: '',
       imageUrl: ''
@@ -62,7 +61,7 @@ class App extends Component {
 
   render() {
     return (
-      <div ref={this.wrapper}>
+      <div>
         <Particles className="particles" params={{ particlesOptions }} />
         <Navigation />
         <Logo />
