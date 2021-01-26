@@ -47,8 +47,15 @@ class App extends Component {
     const image = document.getElementById('inputImage');
     const width = Number(image.width);
     const height = Number(image.height);
-    console.log(width + ' w', height + ' h');
+
+    return {
+      leftCol: ClarifaiFace.left_col * width,
+      topRow: ClarifaiFace.top_row * height,
+      rightCol: width - (clarifaiFace.rigth_col * width),
+      bottomRow: height - (ClarifaiFace.botttom_row * height)
+    }
   }
+
 
   onInputChange = event => {
     this.setState({ input: event.target.value })
