@@ -87,7 +87,7 @@ class App extends Component {
           onInputChange={this.onInputChange} 
           onSubmit={this.onBtnSubmit} 
         />
-        <ImageDetector imageUrl={this.state.imageUrl} />
+        <ImageDetector box={this.state.box} imageUrl={this.state.imageUrl} />
       </div>
     );
   };
