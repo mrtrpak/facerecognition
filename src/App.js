@@ -78,7 +78,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
         <Particles className="particles" params={{ particlesOptions }} />
         <Navigation />
         <Logo />
