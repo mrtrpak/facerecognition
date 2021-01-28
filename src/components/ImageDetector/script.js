@@ -6,9 +6,13 @@ const defaultGif = "https://media.giphy.com/media/l41m04gr7tRet7Uas/giphy.gif"
 
 const ImageDetector = ({ imageUrl, box }) => {
   return (
-    <div className='centerAlign'>
-      <img id='inputImage' src={imageUrl || defaultGif} alt="n/a" />
-      <div className='bounding-box'></div>
+    <div className='center ma'>
+      <div className="absolute mt2">
+        <img id='inputImage' src={imageUrl || defaultGif} alt="n/a" />
+        <div className='bounding-box'
+          style={{ top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol }} >
+        </div>
+      </div>
     </div>
   );
 };
