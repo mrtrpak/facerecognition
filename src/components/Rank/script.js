@@ -2,7 +2,7 @@ import React from 'react';
 
 const Rank = () => {
   return (
-    <div className='centerAlign'>
+    <div>
       <div className='white f3'>
         { 'User, your current rank is...' }
       </div>
