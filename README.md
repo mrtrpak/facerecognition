@@ -8,7 +8,7 @@
 - [Getting Started](#Getting-Started)
 - [Photos](#Photos)
 - [Gif](#Gif)
-- [Photos Used](#Photos-Used)
+- [Photos Used](#Gif-Used)
 
 ## Summary
 
@@ -39,7 +39,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Photos/Gifs Used
+## Gif Used
 
 - [Brain Gif](#https://media.giphy.com/media/l41m04gr7tRet7Uas/giphy.gif)
 
