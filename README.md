@@ -8,6 +8,7 @@
 - [Getting Started](#Getting-Started)
 - [Photos](#Photos)
 - [Gif](#Gif)
+- [Photos Used](#Photos-Used)
 
 ## Summary
 
