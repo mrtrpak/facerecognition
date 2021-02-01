@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './style.css';
+
 const SignIn = () => {
   return (
     <main className="pa4 black-80">
