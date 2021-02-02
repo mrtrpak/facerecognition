@@ -39,7 +39,8 @@ class App extends Component {
     this.state = {
       input: '',
       imageUrl: '',
-      box: {}
+      box: {},
+      route: 'signIn'
     }
   };
 
@@ -81,15 +82,20 @@ class App extends Component {
     return (
       <div className="App">
         <Particles className="particles" params={{ particlesOptions }} />
-        <SignIn />
         <Navigation />
-        <Logo />
-        <Rank />
-        <ImageLinkForm 
+        { this.state.route === 'signIn' ?
+        <SignIn />
+          :
+        <div>
+          <Logo />
+          <Rank />
+          <ImageLinkForm 
           onInputChange={this.onInputChange} 
           onSubmit={this.onBtnSubmit} 
-        />
-        <ImageDetector box={this.state.box} imageUrl={this.state.imageUrl} />
+          />
+          <ImageDetector box={this.state.box} imageUrl={this.state.imageUrl} />
+        </div>
+      }
       </div>
     );
   };
