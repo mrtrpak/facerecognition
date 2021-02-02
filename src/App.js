@@ -79,7 +79,17 @@ class App extends Component {
   };
 
   onRouteChange = () => {
-    this.setState({ route: "home" })
+    const route = this.state.route
+    switch (route) {
+      case 'signIn': 
+        this.setState({ route: 'home'});
+        break;
+      case 'home' :
+        this.setState({ route: 'signIn'});
+        break;
+      default:
+        this.setState({ route: 'signIn'});
+    }
   }
 
   render() {
