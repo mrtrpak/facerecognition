@@ -7,6 +7,7 @@ import Logo from './components/Logo/script';
 import Navigation from './components/Navigation/script';
 import Rank from './components/Rank/script';
 import ImageDetector from './components/ImageDetector/script';
+import SignIn from './components/SignIn/script';
 
 import './App.css';
 
@@ -80,6 +81,7 @@ class App extends Component {
     return (
       <div className="App">
         <Particles className="particles" params={{ particlesOptions }} />
+        <SignIn />
         <Navigation />
         <Logo />
         <Rank />

@@ -16,7 +16,7 @@ const SignIn = () => {
             <label className="db fw6 1h-copy f6" for="password">Password</label>
             <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password" id="password" />
           </div>
-          <label className="pa0 ma0 1h-copy f6 pointer"><input type="checkbox"> Remember Me </input></label>
+          <label className="pa0 ma0 1h-copy f6 pointer"><input type="checkbox" /> Remember Me </label>
         </fieldset>
         <div>
           <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign In" />
