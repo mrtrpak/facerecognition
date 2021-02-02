@@ -96,7 +96,7 @@ class App extends Component {
     return (
       <div className="App">
         <Particles className="particles" params={{ particlesOptions }} />
-        <Navigation />
+        <Navigation onRouteChange={this.onRouteChange} />
         { this.state.route === 'signIn' ?
         <SignIn onRouteChange={this.onRouteChange} />
           :
