@@ -1,0 +1,8 @@
+.align {
+  margin: 10px auto 10px auto;
+}
+
+.Tilt {
+  contain: content;
+  display: block;
+}
