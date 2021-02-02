@@ -7,6 +7,7 @@ import Logo from './components/Logo/script';
 import Navigation from './components/Navigation/script';
 import Rank from './components/Rank/script';
 import ImageDetector from './components/ImageDetector/script';
+import Register from './components/Register/script';
 import SignIn from './components/SignIn/script';
 
 import './App.css';
@@ -78,37 +79,32 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
-  onRouteChange = () => {
-    const route = this.state.route
-    switch (route) {
-      case 'signIn': 
-        this.setState({ route: 'home'});
-        break;
-      case 'home' :
-        this.setState({ route: 'signIn'});
-        break;
-      default:
-        this.setState({ route: 'signIn'});
-    }
-  }
+  onRouteChange = (route) => {
+    this.setState({ route: route });
+  };
 
   render() {
     return (
       <div className="App">
         <Particles className="particles" params={{ particlesOptions }} />
         <Navigation onRouteChange={this.onRouteChange} />
-        { this.state.route === 'signIn' ?
-        <SignIn onRouteChange={this.onRouteChange} />
-          :
-        <div>
-          <Logo />
-          <Rank />
-          <ImageLinkForm 
-          onInputChange={this.onInputChange} 
-          onSubmit={this.onBtnSubmit} 
-          />
-          <ImageDetector box={this.state.box} imageUrl={this.state.imageUrl} />
-        </div>
+        { this.state.route === 'home' ?
+          <div>
+            <Logo />
+            <Rank />
+            <ImageLinkForm 
+            onInputChange={this.onInputChange} 
+            onSubmit={this.onBtnSubmit} 
+            />
+            <ImageDetector box={this.state.box} imageUrl={this.state.imageUrl} />
+          </div>
+          : (
+            this.state.route === 'signIn' ?
+              <SignIn onRouteChange={this.onRouteChange} /> 
+            :
+              <Register onRouteChange={this.onRouteChange} />
+          )
+          
       }
       </div>
     );

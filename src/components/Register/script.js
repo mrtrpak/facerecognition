@@ -7,11 +7,11 @@ const Register = ({ onRouteChange }) => {
         <form className="measure">
           <fieldset id="register" className="ba b--transparent ph0 mh0">
             <legend className="f1 fw6 ph0 mh0">Register</legend>
-            <div className="mt3">
+            <div className="mt2">
               <label className="db fw6 1h-copy f6"  htmlFor="email-address">Name</label>
               <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="name" name="name" id="name" />
             </div>
-            <div className="ma1">
+            <div className="mt2">
               <label className="db fw6 1h-copy f6"  htmlFor="email-address">Email</label>
               <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address" id="email-address" />
             </div>
@@ -22,10 +22,10 @@ const Register = ({ onRouteChange }) => {
           </fieldset>
           <div>
             <input 
-              className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
+              className="b ma3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
               type="submit" 
               value="Sign In"
-              onClick={onRouteChange}
+              onClick={() => onRouteChange('signIn')}
             />
           </div>
           <div className="1h-copy mt3">
