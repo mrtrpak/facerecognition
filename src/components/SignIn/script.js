@@ -4,7 +4,7 @@ import './style.css';
 
 const SignIn = () => {
   return (
-    <article className="br3 ba dar-gray b--black-10 mv4 w-100 w-50-m w-25-1 shadow-3 center">
+    <article className="br3 ba dar-gray b--black-10 mv4 w-75-l w-50-m w-25-1 shadow-3 center">
       <main className="pa4 black-80">
         <form className="measure">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
