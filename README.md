@@ -19,6 +19,7 @@
 - Create a full stack application
 - Publish application to the web
 - Successfully implement API
+- User can register an account
 - User sign in and out
 - Clean UI with particle effect
 - Display image given by the user on the webpage
