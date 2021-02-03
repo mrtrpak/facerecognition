@@ -38,11 +38,15 @@
 
 ## Gif
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Gif Used
 
 - [Brain Gif](#https://media.giphy.com/media/l41m04gr7tRet7Uas/giphy.gif)
+
+
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
