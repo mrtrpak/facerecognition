@@ -28,9 +28,6 @@ const Register = ({ onRouteChange }) => {
               onClick={() => onRouteChange('home')}
             />
           </div>
-          <div className="1h-copy mt3">
-            <a href="#0" className="f6 link dim black db">Login</a>
-          </div>
         </form>
       </main>
     </article>
