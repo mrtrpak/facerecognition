@@ -90,12 +90,13 @@ class App extends Component {
   };
 
   render() {
+    const { isSignedIn, box, imageUrl } = this.state;
     return (
       <div className="App">
         <Particles className="particles" params={{ particlesOptions }} />
         <Navigation 
           onRouteChange={this.onRouteChange} 
-          isSignedIn={this.state.isSignedIn}
+          isSignedIn={isSignedIn}
         />
         { this.state.route === 'home' ?
           <div>
@@ -105,7 +106,7 @@ class App extends Component {
             onInputChange={this.onInputChange} 
             onSubmit={this.onBtnSubmit} 
             />
-            <ImageDetector box={this.state.box} imageUrl={this.state.imageUrl} />
+            <ImageDetector box={box} imageUrl={imageUrl} />
           </div>
           : (
             this.state.route === 'signIn' ?
