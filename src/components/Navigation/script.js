@@ -17,13 +17,13 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
         <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <p 
           className='f3 link dim black underline-hover pa3 pointer'
-          onClick={() => onRouteChange('signIn')}
+          onClick={() => onRouteChange('home')}
           >
             Sign In
           </p>
           <p 
             className='f3 link dim black underline-hover pa3 pointer'
-            onClick={() => onRouteChange('register')}
+            onClick={() => onRouteChange('home')}
             >
             Register
           </p>
