@@ -14,24 +14,20 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
     );
     } else {
       return (
-        <div>
-          <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <p 
-            className='f3 link dim black underline pa3 pointer'
-            onClick={() => onRouteChange('signIn')}
+        <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <p 
+          className='f3 link dim black underline-hover pa3 pointer'
+          onClick={() => onRouteChange('signIn')}
+          >
+            Sign In
+          </p>
+          <p 
+            className='f3 link dim black underline-hover pa3 pointer'
+            onClick={() => onRouteChange('register')}
             >
-              Sign In
-            </p>
-          </nav>
-          <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <p 
-              className='f3 link dim black underline pa3 pointer'
-              onClick={() => onRouteChange('signIn')}
-              >
-              Register
-            </p>
-        </nav>
-      </div>
+            Register
+          </p>
+      </nav>
     );
   }
 };
