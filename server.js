@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import bcrypt from 'bcrypt-nodejs';
 
 const app = express();
 
@@ -93,6 +94,18 @@ app.put('/image', (req, res) => {
   if (!found) {
     res.status(400).json('not found');
   };
+});
+
+bcrypt.hash("bacon", null, null, function(err, hash) {
+  // Store hash in your password DB.
+});
+
+// Load hash from your password DB.
+bcrypt.compare("bacon", hash, function(err, res) {
+  // res == true
+});
+bcrypt.compare("veggies", hash, function(err, res) {
+  // res = false
 });
 
 app.listen(3000, () => {
