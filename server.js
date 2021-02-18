@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 const mockDB = {
   users: [
     {
-      id: '1',
+      id: 1,
       name: 'PJ',
       email: 'p@email.com',
       password: 'cook',
@@ -17,7 +17,7 @@ const mockDB = {
       joined: new Date()
     },
     {
-      id: '2',
+      id: 2,
       name: 'Amy',
       email: 'a@email.com',
       password: 'bake',
@@ -25,7 +25,7 @@ const mockDB = {
       joined: new Date()
     },
     {
-      id: '3',
+      id: 3,
       name: 'Lil',
       email: 'l@email.com',
       password: 'grill',
@@ -45,8 +45,20 @@ app.post('/signIn', (req, res) => {
     res.json('success');
   } else {
     res.status(400).json('error logging in');
-  }
-})
+  };
+});
+
+app.post ('/register', (req, res) => {
+  const { name, email, password } = req.body;
+  mockDB.users.push({
+    id: 4,
+    name: name,
+    email: email,
+    password: password,
+    entries: 0,
+    joined: new Date()
+  });
+});
 
 app.listen(3000, () => {
   console.log("is up and running");
