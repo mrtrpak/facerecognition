@@ -12,7 +12,6 @@ const mockDB = {
       id: '1',
       name: 'PJ',
       email: 'p@email.com',
-      password: 'cook',
       entries: 0,
       joined: new Date()
     },
@@ -20,7 +19,6 @@ const mockDB = {
       id: '2',
       name: 'Amy',
       email: 'a@email.com',
-      password: 'bake',
       entries: 0,
       joined: new Date()
     },
@@ -28,10 +26,17 @@ const mockDB = {
       id: '3',
       name: 'Lil',
       email: 'l@email.com',
-      password: 'grill',
       entries: 0,
       joined: new Date()
     }
+  ],
+  login: [
+    {
+      id: '1234',
+      hash: '',
+      email: ''
+    }
+
   ]
 };
 
