@@ -1,6 +1,10 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 
 const app = express();
+
+//middleware to read json
+app.use(bodyParser.json());
 
 const mockDB = {
   users: [
@@ -36,7 +40,12 @@ app.get('/', (req, res) => {
 });
 
 app.post('/signIn', (req, res) => {
-  res.json("signing in");
+  if (req.body.email === mockDB.users[0].email && 
+    req.body.password === mockDB.users[0].password) {
+    res.json('success');
+  } else {
+    res.status(400).json('error logging in');
+  }
 })
 
 app.listen(3000, () => {
