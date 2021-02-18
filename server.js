@@ -75,6 +75,21 @@ app.get('/profile/:id', (req, res) => {
   };
 });
 
+app.put('/image', (req, res) => {
+  const { id } = req.params;
+  let found = false;
+  mockDB.users.forEach(user => {
+    if (user.id === id) {
+      found = true;
+      user.entries++
+      return res.json(user.entries);
+    }
+  })
+  if (!found) {
+    res.status(400).json('not found');
+  };
+});
+
 app.listen(3000, () => {
   console.log("is up and running");
 });
