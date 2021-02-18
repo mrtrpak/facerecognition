@@ -58,6 +58,7 @@ app.post ('/register', (req, res) => {
     entries: 0,
     joined: new Date()
   });
+  res.json(mockDB.users[mockDB.users.length -1])
 });
 
 app.listen(3000, () => {
