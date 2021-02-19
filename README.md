@@ -31,6 +31,9 @@
 - http://projects.verou.me/css3patterns/
 - react-particles
 - clarifai
+- express
+- nodejs
+- bcrypt-nodejs
 
 ## Getting Started
 
