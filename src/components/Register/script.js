@@ -12,15 +12,33 @@ class Register extends Component {
               <legend className="f1 fw6 ph0 mh0">Register</legend>
               <div className="mt2">
                 <label className="db fw6 1h-copy f6"  htmlFor="email-address">Name</label>
-                <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="name" name="name" id="name" />
+                <input 
+                  onChange={}
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+                  type="name" 
+                  name="name" 
+                  id="name" 
+                />
               </div>
               <div className="mt2">
                 <label className="db fw6 1h-copy f6"  htmlFor="email-address">Email</label>
-                <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address" id="email-address" />
+                <input 
+                  onchange={}
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+                  type="email" 
+                  name="email-address" 
+                  id="email-address" 
+                />
               </div>
               <div className="mv3">
                 <label className="db fw6 1h-copy f6" htmlFor="password">Password</label>
-                <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password" id="password" />
+                <input 
+                  onchange={}
+                  className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+                  type="password" 
+                  name="password" 
+                  id="password" 
+                />
               </div>
             </fieldset>
             <div>
@@ -29,7 +47,7 @@ class Register extends Component {
                 type="submit" 
                 value="register"
                 onClick={() => onRouteChange('home')}
-                />
+              />
             </div>
           </div>
         </main>
