@@ -4,6 +4,8 @@ import './style.css';
 
 class SignIn extends Component {
   render() {
+    const { onRouteChange } = this.props;
+
     return (
       <article className="br3 ba dar-gray b--black-10 mv4 w-75-l w-50-m w-25-1 shadow-3 center">
         <main className="pa4 black-80">
@@ -24,13 +26,13 @@ class SignIn extends Component {
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
                 type="submit" 
                 value="Sign In"
-                onClick={() => this.props.onRouteChange('home')}
+                onClick={() => onRouteChange('home')}
                 />
             </div>
             <div className="1h-copy mt3">
               <p 
                 className="f6 link dim black db pointer"
-                onClick={() => this.props.onRouteChange('register')}
+                onClick={() => onRouteChange('register')}
                 >
                 Register
               </p>

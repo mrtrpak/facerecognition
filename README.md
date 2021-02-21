@@ -31,6 +31,7 @@
 - http://projects.verou.me/css3patterns/
 - react-particles
 - clarifai
+- cors
 - express
 - nodejs
 - bcrypt-nodejs
