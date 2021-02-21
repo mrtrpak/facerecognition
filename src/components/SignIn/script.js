@@ -24,13 +24,13 @@ class SignIn extends Component {
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
                 type="submit" 
                 value="Sign In"
-                onClick={() => onRouteChange('home')}
+                onClick={() => this.props.onRouteChange('home')}
                 />
             </div>
             <div className="1h-copy mt3">
               <p 
                 className="f6 link dim black db pointer"
-                onClick={() => onRouteChange('register')}
+                onClick={() => this.props.onRouteChange('register')}
                 >
                 Register
               </p>
