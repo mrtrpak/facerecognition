@@ -1,17 +1,22 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import bcrypt from 'bcrypt-nodejs';
+import cors from 'cors';
 
 const app = express();
 
 //middleware to read json
 app.use(bodyParser.json());
 
+// cors middleware
+app.use(cors());
+
 const mockDB = {
   users: [
     {
       id: '1',
       name: 'PJ',
+      password: 'word',
       email: 'p@email.com',
       entries: 0,
       joined: new Date()
@@ -19,6 +24,7 @@ const mockDB = {
     {
       id: '2',
       name: 'Amy',
+      password: 'hello',
       email: 'a@email.com',
       entries: 0,
       joined: new Date()
@@ -26,6 +32,7 @@ const mockDB = {
     {
       id: '3',
       name: 'Lil',
+      password: 'train',
       email: 'l@email.com',
       entries: 0,
       joined: new Date()
@@ -46,6 +53,14 @@ app.get('/', (req, res) => {
 });
 
 app.post('/signIn', (req, res) => {
+
+  // bcrypt.compare("bacon", hash, function(err, res) {
+  // // res == true
+  // });
+  // bcrypt.compare("veggies", hash, function(err, res) {
+  //   // res = false
+  // });
+
   if (req.body.email === mockDB.users[0].email && 
     req.body.password === mockDB.users[0].password) {
     res.json('success');
@@ -100,18 +115,6 @@ app.put('/image', (req, res) => {
     res.status(400).json('not found');
   };
 });
-
-// bcrypt.hash("bacon", null, null, function(err, hash) {
-//   // Store hash in your password DB.
-// });
-
-// // Load hash from your password DB.
-// bcrypt.compare("bacon", hash, function(err, res) {
-//   // res == true
-// });
-// bcrypt.compare("veggies", hash, function(err, res) {
-//   // res = false
-// });
 
 app.listen(3000, () => {
   console.log("is up and running");
