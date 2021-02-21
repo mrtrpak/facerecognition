@@ -1,6 +1,26 @@
 import React, { Component } from 'react';
 
 class Register extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      registerName: '',
+      registerEmail: '',
+      registerPassword: ''
+    };
+  };
+
+  onNameChange = event => {
+    this.setState({ registerName: event.target.value });
+  };
+
+  onEmailChange = event => {
+    this.setState({ registerEmail: event.target.value });
+  };
+
+  onPasswordChange = event => {
+    this.setState({ registerPassword: event.target.value });
+  };
   
   render() {
     const { onRouteChange } = this.props;
@@ -13,7 +33,7 @@ class Register extends Component {
               <div className="mt2">
                 <label className="db fw6 1h-copy f6"  htmlFor="email-address">Name</label>
                 <input 
-                  onChange={}
+                  onChange={this.onNameChange}
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                   type="name" 
                   name="name" 
@@ -23,7 +43,7 @@ class Register extends Component {
               <div className="mt2">
                 <label className="db fw6 1h-copy f6"  htmlFor="email-address">Email</label>
                 <input 
-                  onchange={}
+                  onchange={this.onEmailChange}
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                   type="email" 
                   name="email-address" 
@@ -33,7 +53,7 @@ class Register extends Component {
               <div className="mv3">
                 <label className="db fw6 1h-copy f6" htmlFor="password">Password</label>
                 <input 
-                  onchange={}
+                  onchange={this.onPasswordChange}
                   className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                   type="password" 
                   name="password" 
