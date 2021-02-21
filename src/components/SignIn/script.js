@@ -40,7 +40,8 @@ class SignIn extends Component {
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                   type="email" 
                   name="email-address" 
-                  id="email-address" />
+                  id="email-address" 
+                />
               </div>
               <div className="mv3">
                 <label className="db fw6 1h-copy f6" htmlFor="password">Password</label>
@@ -49,7 +50,8 @@ class SignIn extends Component {
                   className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                   type="password" 
                   name="password" 
-                  id="password" />
+                  id="password" 
+                />
               </div>
             </fieldset>
             <div>
@@ -58,13 +60,13 @@ class SignIn extends Component {
                 type="submit" 
                 value="Sign In"
                 onClick={() => this.onSubmitSignIn()}
-                />
+              />
             </div>
             <div className="1h-copy mt3">
               <p 
                 className="f6 link dim black db pointer"
                 onClick={() => onRouteChange('register')}
-                >
+              >
                 Register
               </p>
             </div>
