@@ -21,9 +21,27 @@ class Register extends Component {
   onPasswordChange = event => {
     this.setState({ password: event.target.value });
   };
+
+  onSubmitRegister = () => {
+    fetch('https://localhost:3000/register', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password
+      })
+    })
+    .then(response => response.json())
+    .then(user => {
+      if (user) {
+        this.props.loadUser(user)
+        this.props.onRouteChange('home');
+      };
+    });
+  };
   
   render() {
-    const { onRouteChange } = this.props;
     return (
       <article className="br3 ba dar-gray b--black-10 mv4 w-75-l w-50-m w-25-1 shadow-3 center">
         <main className="pa4 black-80">
@@ -66,7 +84,7 @@ class Register extends Component {
                 className="b3 ma3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                 type="submit" 
                 value="register"
-                onClick={() => onRouteChange('home')}
+                onClick={this.onSubmitRegister}
               />
             </div>
           </div>
