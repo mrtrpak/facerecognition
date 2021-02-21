@@ -3,6 +3,26 @@ import React, { Component } from 'react';
 import './style.css';
 
 class SignIn extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      signInEmail: '',
+      signInPassword: ''
+    }
+  };
+;
+  onEmailChange = event => {
+    this.setState({ signInEmail: event.target.value });
+  };
+
+  onPasswordChange = event => {
+    this.setState({ signInPassword: event.target.value });
+  };
+
+  onSubmitSignIn = () => {
+    console.log(this.state);
+  };
+
   render() {
     const { onRouteChange } = this.props;
 
