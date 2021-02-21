@@ -4,22 +4,22 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      registerName: '',
-      registerEmail: '',
-      registerPassword: ''
+      name: '',
+      email: '',
+      password: ''
     };
   };
 
   onNameChange = event => {
-    this.setState({ registerName: event.target.value });
+    this.setState({ name: event.target.value });
   };
 
   onEmailChange = event => {
-    this.setState({ registerEmail: event.target.value });
+    this.setState({ email: event.target.value });
   };
 
   onPasswordChange = event => {
-    this.setState({ registerPassword: event.target.value });
+    this.setState({ password: event.target.value });
   };
   
   render() {
