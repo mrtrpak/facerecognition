@@ -63,7 +63,7 @@ app.post('/signIn', (req, res) => {
 
   if (req.body.email === mockDB.users[0].email && 
     req.body.password === mockDB.users[0].password) {
-    res.json('success');
+    res.json(mockDB.users[0]);
   } else {
     res.status(400).json('error logging in');
   };

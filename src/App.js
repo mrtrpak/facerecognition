@@ -59,8 +59,8 @@ class App extends Component {
         id: data.id,
         name: data.name,
         email: data.email,
-        entries: 0,
-        joined: new Date()
+        entries: data.entries,
+        joined: data.joined
       }
     })
   }
@@ -120,7 +120,8 @@ class App extends Component {
         { this.state.route === 'home' ?
           <div>
             <Logo />
-            <Rank />
+            <Rank name={this.state.user.name} 
+              entries={this.state.user.entries} />
             <ImageLinkForm 
             onInputChange={this.onInputChange} 
             onSubmit={this.onBtnSubmit} 
