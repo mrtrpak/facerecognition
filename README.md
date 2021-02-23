@@ -35,7 +35,7 @@
 - express
 - nodejs
 - bcrypt-nodejs
-- postgresql
+- postgreSQL
 
 ## Getting Started
 
