@@ -26,3 +26,4 @@ yarn-error.log*
 .eslintcache
 debug.log
 hidden.js
+smartbrain.sql
