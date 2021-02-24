@@ -2,6 +2,19 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import bcrypt from 'bcrypt-nodejs';
 import cors from 'cors';
+import knex from 'knex';
+
+import { user, password, database } from './src/assets/hidden';
+
+knex({
+  client: 'pg',
+  connection: {
+    host: '127.0.0.1',
+    user: user,
+    password: password,
+    database: database
+  }
+});
 
 const app = express();
 
