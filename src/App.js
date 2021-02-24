@@ -12,7 +12,7 @@ import SignIn from './components/SignIn/script';
 
 import './App.css';
 
-import { apiKey } from "./assets/hidden";
+import { apiKey } from "./assets/hidden.js";
 
 
 const app = new Clarifai.App({

@@ -4,9 +4,9 @@ import bcrypt from 'bcrypt-nodejs';
 import cors from 'cors';
 import knex from 'knex';
 
-import { user, password, database } from './src/assets/hidden';
+import { user, password, database } from './src/assets/hidden.js';
 
-knex({
+const postgres = knex({
   client: 'pg',
   connection: {
     host: '127.0.0.1',
