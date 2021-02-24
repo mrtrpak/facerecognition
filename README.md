@@ -36,6 +36,7 @@
 - nodejs
 - bcrypt-nodejs
 - postgreSQL
+- knex.js
 
 ## Getting Started
 
