@@ -31,9 +31,11 @@ class Register extends Component {
         email: this.state.email,
         password: this.state.password
       })
+
     })
     .then(response => response.json())
     .then(user => {
+      console.log(user);
       if (user) {
         this.props.loadUser(user)
         this.props.onRouteChange('home');
@@ -61,7 +63,7 @@ class Register extends Component {
               <div className="mt2">
                 <label className="db fw6 1h-copy f6"  htmlFor="email-address">Email</label>
                 <input 
-                  onchange={this.onEmailChange}
+                  onChange={this.onEmailChange}
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                   type="email" 
                   name="email-address" 
@@ -71,7 +73,7 @@ class Register extends Component {
               <div className="mv3">
                 <label className="db fw6 1h-copy f6" htmlFor="password">Password</label>
                 <input 
-                  onchange={this.onPasswordChange}
+                  onChange={this.onPasswordChange}
                   className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                   type="password" 
                   name="password" 
