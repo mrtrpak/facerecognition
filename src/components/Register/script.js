@@ -23,7 +23,7 @@ class Register extends Component {
   };
 
   onSubmitRegister = () => {
-    fetch('https://localhost:3001/register', {
+    fetch('http://localhost:3001/register', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -35,8 +35,8 @@ class Register extends Component {
     })
     .then(response => response.json())
     .then(user => {
-      console.log(user);
       if (user) {
+        console.log(user, 'user console 2');
         this.props.loadUser(user)
         this.props.onRouteChange('home');
       };
