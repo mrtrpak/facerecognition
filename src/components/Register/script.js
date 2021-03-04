@@ -8,7 +8,9 @@ class Register extends Component {
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      errMsg: '',
+
     };
   };
 
@@ -28,78 +30,85 @@ class Register extends Component {
     let { name, email, password } = this.state;
 
     if (password.length < 8) {
-
-    }
-
-    fetch('https://localhost:3001/register', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        password: password
+      this.setState({ errMsg: 'Password must be at least 8 characters long' });
+    } else if (password.length < 100) {
+      this.setState({ errMsg: 'Password must be less than 100 characters' });
+    } else {
+      fetch('https://localhost:3001/register', {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          password: password
+        })
+  
       })
-
-    })
-    .then(response => response.json())
-    .then(user => {
-      if (user) {
-        this.props.loadUser(user)
-        this.props.onRouteChange('home');
-      };
-    });
+      .then(response => response.json())
+      .then(user => {
+        if (user) {
+          this.props.loadUser(user)
+          this.props.onRouteChange('home');
+        };
+      });
+    }
   };
   
   render() {
     return (
-      <article className="br3 ba dar-gray b--black-10 mv4 w-75-l w-50-m w-25-1 shadow-3 center">
-        <main className="pa4 black-80">
-          <div className="measure">
-            <fieldset id="register" className="ba b--transparent ph0 mh0">
-              <legend className="f1 fw6 ph0 mh0">REGISTER</legend>
-              <div className="mt2">
-                <label className="db fw6 1h-copy f6"  htmlFor="name">Name</label>
+      <div className="container pa4">
+        <h4 className="br3">{this.state.errMsg}</h4>
+        <article className="br3 ba dar-gray b--black-10 mv4 w-50-l w-60-m w-25-1 shadow-3 center">
+          <main className="pa4 black-80">
+            <div className="measure">
+              <fieldset id="register" className="ba b--transparent ph0 mh0">
+                <legend className="f1 fw6 ph0 mh0">REGISTER</legend>
+                <div className="mt2">
+                  <label className="db fw6 1h-copy f6"  htmlFor="name">Name</label>
+                  <input 
+                    onChange={this.onNameChange}
+                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-90" 
+                    type="name" 
+                    name="name" 
+                    id="name" 
+                    placeholder="Optional"
+                    />
+                </div>
+                <div className="mt2">
+                  <label className="db fw6 1h-copy f6"  htmlFor="email-address">Email</label>
+                  <input 
+                    onChange={this.onEmailChange}
+                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+                    type="email" 
+                    name="email-address" 
+                    id="email-address"
+                    placeholder="Must have @ and .com" 
+                    />
+                </div>
+                <div className="mv3">
+                  <label className="db fw6 1h-copy f6" htmlFor="password">Password</label>
+                  <input 
+                    onChange={this.onPasswordChange}
+                    className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    placeholder='Must be between 8-100'
+                    />
+                </div>
+              </fieldset>
+              <div>
                 <input 
-                  onChange={this.onNameChange}
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-90" 
-                  type="name" 
-                  name="name" 
-                  id="name" 
-                  placeholder="Optional"
-                />
+                  className="b ph3 pv2 input-reset b--black bg-transparent grow pointer f6 dib"
+                  type="submit" 
+                  value="register"
+                  onClick={this.onSubmitRegister}
+                  />
               </div>
-              <div className="mt2">
-                <label className="db fw6 1h-copy f6"  htmlFor="email-address">Email</label>
-                <input 
-                  onChange={this.onEmailChange}
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
-                  type="email" 
-                  name="email-address" 
-                  id="email-address" 
-                />
-              </div>
-              <div className="mv3">
-                <label className="db fw6 1h-copy f6" htmlFor="password">Password</label>
-                <input 
-                  onChange={this.onPasswordChange}
-                  className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
-                  type="password" 
-                  name="password" 
-                  id="password" 
-                />
-              </div>
-            </fieldset>
-            <div>
-              <input 
-                className="b3 ma3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-                type="submit" 
-                value="register"
-                onClick={this.onSubmitRegister}
-              />
             </div>
-          </div>
-        </main>
-      </article>
+          </main>
+        </article>
+      </div>
     );
   }
 };
