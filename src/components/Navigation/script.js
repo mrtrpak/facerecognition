@@ -6,7 +6,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
     <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <p 
           className='f3 link dim black underline pa3 pointer'
-          onClick={() => onRouteChange('signOut')}
+          onClick={() => onRouteChange('signout')}
           >
           Sign Out
         </p>
@@ -17,7 +17,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
         <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <p 
           className='f3 link dim black underline-hover pa3 pointer'
-          onClick={() => onRouteChange('signIn')}
+          onClick={() => onRouteChange('signin')}
           >
             Sign In
           </p>

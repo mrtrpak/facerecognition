@@ -41,7 +41,7 @@ class App extends Component {
       input: '',
       imageUrl: '',
       box: {},
-      route: 'signIn',
+      route: 'signin',
       isSignedIn: false,
       user: {
         id: '',
@@ -117,7 +117,7 @@ class App extends Component {
   };
 
   onRouteChange = (route) => {
-    if (route === 'signOut') {
+    if (route === 'signout') {
       this.setState({ isSignedIn: false });
     } else if (route === 'home') {
       this.setState({ isSignedIn: true });
@@ -146,7 +146,7 @@ class App extends Component {
             <ImageDetector box={box} imageUrl={imageUrl} />
           </div>
           : (
-            this.state.route === 'signIn' ?
+            this.state.route === 'signin' ?
               <SignIn onRouteChange={this.onRouteChange} /> 
             :
               <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
