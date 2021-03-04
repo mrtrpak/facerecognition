@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './style.css';
+
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +26,10 @@ class Register extends Component {
 
   onSubmitRegister = () => {
     let { name, email, password } = this.state;
+
+    if (password.length < 8) {
+
+    }
 
     fetch('https://localhost:3001/register', {
       method: 'post',
@@ -50,15 +56,16 @@ class Register extends Component {
         <main className="pa4 black-80">
           <div className="measure">
             <fieldset id="register" className="ba b--transparent ph0 mh0">
-              <legend className="f1 fw6 ph0 mh0">Register</legend>
+              <legend className="f1 fw6 ph0 mh0">REGISTER</legend>
               <div className="mt2">
-                <label className="db fw6 1h-copy f6"  htmlFor="email-address">Name</label>
+                <label className="db fw6 1h-copy f6"  htmlFor="name">Name</label>
                 <input 
                   onChange={this.onNameChange}
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-90" 
                   type="name" 
                   name="name" 
                   id="name" 
+                  placeholder="Optional"
                 />
               </div>
               <div className="mt2">
