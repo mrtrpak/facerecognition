@@ -20,12 +20,14 @@ class SignIn extends Component {
   };
 
   onSubmitSignIn = () => {
+    let { signInEmail, signInPassword } = this.state;
+
     fetch('https://localhost:3001/signin', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email: this.state.signInEmail,
-        password: this.state.signInPassword
+        email: signInEmail,
+        password: signInPassword
       })
     })
     .then(response => response.json())
