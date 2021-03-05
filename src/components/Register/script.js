@@ -10,7 +10,7 @@ class Register extends Component {
       email: '',
       password: '',
       errMsg: '',
-
+      display: 'none'
     };
   };
 
@@ -30,17 +30,31 @@ class Register extends Component {
     this.setState({ password: event.target.value });
   };
 
+  updateDisplay = () => {
+    const { display } = this.state;
+
+    if (display === 'none') {
+      this.setState({ display: 'block' });
+    } else {
+      this.setState({ display: 'none'});
+    };
+  };
+
   onSubmitRegister = () => {
     const { name, email, password } = this.state;
+    const { updateDisplay, validateEmail } = this;
 
     if (password.length < 8) {
+      updateDisplay();
       this.setState({ errMsg: 'Password must contain at least 8 characters' });
     } else if (password.length > 100) {
+      updateDisplay();
       this.setState({ errMsg: 'Password must be less than 100 characters' });
-    } else if (!this.validateEmail(email)) {
-      this.setState({ errMsg: 'Must have standard email format with an @ and dot'})
+    } else if (!validateEmail(email)) {
+      updateDisplay();
+      this.setState({ errMsg: 'Must have standard email format with an @ and dot'});
     } else {
-      fetch('https://localhost:3001/register', {
+      fetch('http://localhost:3001/register', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -61,11 +75,16 @@ class Register extends Component {
   };
   
   render() {
+    const { onNameChange, onEmailChange, onPasswordChange, onSubmitRegister } = this;
+    const { errMsg, display } = this.state;
+    
     return (
       <div className="container pa4">
-        <div className=" ma1 w-50-l w-60-m w-25-1 center">
-
-        <h4 className="br3 m3"> {this.state.errMsg} </h4>
+        <div 
+          className=" ma1 w-50-l w-60-m w-25-1 center"
+          style={{ display: display }}
+        >
+          <h4 className="br3 m3"> {errMsg} </h4>
         </div>
         <article className="br3 ba dar-gray b--black-10 mv4 w-50-l w-60-m w-25-1 shadow-3 center">
           <main className="pa4 black-80">
@@ -75,7 +94,7 @@ class Register extends Component {
                 <div className="mt2">
                   <label className="db fw6 1h-copy f6"  htmlFor="name">Name</label>
                   <input 
-                    onChange={this.onNameChange}
+                    onChange={onNameChange}
                     className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-90" 
                     type="name" 
                     name="name" 
@@ -86,7 +105,7 @@ class Register extends Component {
                 <div className="mt2">
                   <label className="db fw6 1h-copy f6"  htmlFor="email-address">Email</label>
                   <input 
-                    onChange={this.onEmailChange}
+                    onChange={onEmailChange}
                     className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                     type="email" 
                     name="email-address" 
@@ -97,7 +116,7 @@ class Register extends Component {
                 <div className="mv3">
                   <label className="db fw6 1h-copy f6" htmlFor="password">Password</label>
                   <input 
-                    onChange={this.onPasswordChange}
+                    onChange={onPasswordChange}
                     className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                     type="password" 
                     name="password" 
@@ -111,7 +130,7 @@ class Register extends Component {
                   className="b ph3 pv2 input-reset b--black bg-transparent grow pointer f6 dib"
                   type="submit" 
                   value="register"
-                  onClick={this.onSubmitRegister}
+                  onClick={onSubmitRegister}
                   />
               </div>
             </div>
