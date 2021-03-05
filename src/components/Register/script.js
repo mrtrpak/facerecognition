@@ -30,7 +30,7 @@ class Register extends Component {
     let { name, email, password } = this.state;
 
     if (password.length < 8) {
-      this.setState({ errMsg: 'Password must be at least 8 characters long' });
+      this.setState({ errMsg: 'Password must contain at least 8 characters' });
     } else if (password.length < 100) {
       this.setState({ errMsg: 'Password must be less than 100 characters' });
     } else {
@@ -57,7 +57,10 @@ class Register extends Component {
   render() {
     return (
       <div className="container pa4">
+        <div className=" ma1 w-50-l w-60-m w-25-1 center">
+
         <h4 className="br3">{this.state.errMsg}</h4>
+        </div>
         <article className="br3 ba dar-gray b--black-10 mv4 w-50-l w-60-m w-25-1 shadow-3 center">
           <main className="pa4 black-80">
             <div className="measure">

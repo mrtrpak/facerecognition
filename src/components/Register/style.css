@@ -16,12 +16,11 @@
 
 h4 {
   background-color: darkred;
-  height: auto;
-  width: 50%;
   margin-bottom: 10px;
 }
 
 .container {
+  justify-content: center;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
