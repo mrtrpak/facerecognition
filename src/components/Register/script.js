@@ -22,7 +22,7 @@ class Register extends Component {
     this.setState({ email: event.target.value });
   };
 
-  validateEmail = email => {
+  validatedEmail = email => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
@@ -42,7 +42,7 @@ class Register extends Component {
 
   onSubmitRegister = () => {
     const { name, email, password } = this.state;
-    const { updateDisplay, validateEmail } = this;
+    const { updateDisplay, validatedEmail } = this;
 
     if (password.length < 8) {
       updateDisplay();
@@ -50,7 +50,7 @@ class Register extends Component {
     } else if (password.length > 100) {
       updateDisplay();
       this.setState({ errMsg: 'Password must be less than 100 characters' });
-    } else if (!validateEmail(email)) {
+    } else if (!validatedEmail(email)) {
       updateDisplay();
       this.setState({ errMsg: 'Must have standard email format with an @ and dot'});
     } else {
@@ -71,13 +71,13 @@ class Register extends Component {
           this.props.onRouteChange('home');
         };
       });
-    }
+    };
   };
   
   render() {
     const { onNameChange, onEmailChange, onPasswordChange, onSubmitRegister } = this;
     const { errMsg, display } = this.state;
-    
+
     return (
       <div className="container pa4">
         <div 
