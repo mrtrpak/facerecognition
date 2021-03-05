@@ -22,17 +22,23 @@ class Register extends Component {
     this.setState({ email: event.target.value });
   };
 
+  validateEmail = email => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
   onPasswordChange = event => {
     this.setState({ password: event.target.value });
   };
 
   onSubmitRegister = () => {
-    let { name, email, password } = this.state;
+    const { name, email, password } = this.state;
 
     if (password.length < 8) {
       this.setState({ errMsg: 'Password must contain at least 8 characters' });
-    } else if (password.length < 100) {
+    } else if (password.length > 100) {
       this.setState({ errMsg: 'Password must be less than 100 characters' });
+    } else if (!this.validateEmail(email)) {
+      this.setState({ errMsg: 'Must have standard email format with an @ and dot'})
     } else {
       fetch('https://localhost:3001/register', {
         method: 'post',
@@ -59,7 +65,7 @@ class Register extends Component {
       <div className="container pa4">
         <div className=" ma1 w-50-l w-60-m w-25-1 center">
 
-        <h4 className="br3">{this.state.errMsg}</h4>
+        <h4 className="br3 m3"> {this.state.errMsg} </h4>
         </div>
         <article className="br3 ba dar-gray b--black-10 mv4 w-50-l w-60-m w-25-1 shadow-3 center">
           <main className="pa4 black-80">
@@ -85,7 +91,7 @@ class Register extends Component {
                     type="email" 
                     name="email-address" 
                     id="email-address"
-                    placeholder="Must have @ and .com" 
+                    placeholder="Must have @ and dot" 
                     />
                 </div>
                 <div className="mv3">
