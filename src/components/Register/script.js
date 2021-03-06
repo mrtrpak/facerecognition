@@ -95,7 +95,7 @@ class Register extends Component {
                   <label className="db fw6 1h-copy f6"  htmlFor="name">Name</label>
                   <input 
                     onChange={onNameChange}
-                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-90" 
+                    className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-90" 
                     type="name" 
                     name="name" 
                     id="name" 
@@ -106,7 +106,7 @@ class Register extends Component {
                   <label className="db fw6 1h-copy f6"  htmlFor="email-address">Email</label>
                   <input 
                     onChange={onEmailChange}
-                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+                    className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                     type="email" 
                     name="email-address" 
                     id="email-address"
