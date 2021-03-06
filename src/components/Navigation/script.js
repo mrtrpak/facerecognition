@@ -8,7 +8,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
           className='f3 link dim black underline-hover pa3 pointer'
           onClick={() => onRouteChange('signout')}
           >
-          Sign Out
+          SIGN OUT
         </p>
       </nav>
     );
@@ -19,13 +19,13 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
           className='f3 link dim black underline-hover pa3 pointer'
           onClick={() => onRouteChange('signin')}
           >
-            Sign In
+            SIGN IN
           </p>
           <p 
             className='f3 link dim black underline-hover pa3 pointer'
             onClick={() => onRouteChange('register')}
             >
-            Register
+            REGISTER
           </p>
       </nav>
     );
