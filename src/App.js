@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
-import Clarifai from 'clarifai';
 
 import ImageLinkForm from './components/ImageLinkForm/script';
 import Logo from './components/Logo/script';

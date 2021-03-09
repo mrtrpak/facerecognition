@@ -25,5 +25,4 @@ yarn-error.log*
 # Optional eslint cache
 .eslintcache
 debug.log
-hidden.js
 smartbrain.sql
