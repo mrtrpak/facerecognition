@@ -11,13 +11,6 @@ import SignIn from './components/SignIn/script';
 
 import './App.css';
 
-import { apiKey } from "./assets/hidden.js";
-
-
-const app = new Clarifai.App({
-  apiKey: apiKey
-});
-
 const particlesOptions = {
   particles: {
     Number: {
@@ -90,12 +83,7 @@ class App extends Component {
   };
 
   onBtnSubmit = () => {
-    this.setState({ imageUrl: this.state.input });
-
-    app.models
-      .predict( 
-        Clarifai.FACE_DETECT_MODEL, 
-        this.state.input)
+    this.setState({ imageUrl: this.state.input })
       .then(response => {
         if (response) {
           fetch('http://localhost:3001/image', {
