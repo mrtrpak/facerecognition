@@ -56,8 +56,8 @@ class App extends Component {
         entries: data.entries,
         joined: data.joined
       }
-    })
-  }
+    });
+  };
 
   calculateFaceLocation = data => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
@@ -70,12 +70,12 @@ class App extends Component {
       topRow: (clarifaiFace.top_row * height) + (height * 0.15),
       rightCol: width - (clarifaiFace.right_col * width),
       bottomRow: (height - (clarifaiFace.bottom_row * height)) + (height * 0.15)
-    }
-  }
+    };
+  };
 
   displayFaceBox = box => {
     this.setState({ box });
-  }
+  };
 
   onInputChange = event => {
     this.setState({ input: event.target.value })
