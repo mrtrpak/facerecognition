@@ -54,7 +54,7 @@ class Register extends Component {
       updateDisplay();
       this.setState({ errMsg: 'Must have standard email format with an @ and dot'});
     } else {
-      fetch('http://localhost:3001/register', {
+      fetch('https://pacific-wildwood-77993.herokuapp.com/register', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
