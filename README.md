@@ -1,6 +1,7 @@
 # The Brain Face Detector
 
 # Website URL
+
 - [https://smart-brain-detect3.herokuapp.com/](#https://smart-brain-detect3.herokuapp.com/)
 
 # Backend Repo
@@ -45,8 +46,6 @@
 ## Gif Used
 
 - [Brain Gif](#https://media.giphy.com/media/l41m04gr7tRet7Uas/giphy.gif)
-
-
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
