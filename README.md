@@ -11,7 +11,7 @@
 # Table of Contents
 
 - [Summary](#Summary)
-- [Goals](#Goals)
+- [Goals](#Goals-Accomplished)
 - [Tools Used](#Tools-Used)
 - [Photos Used](#Gif-Used)
 
@@ -19,7 +19,7 @@
 
 - Enter an image url for the brain to do it's magic. It will detect a face in the image and outline them.
 
-## Goals
+## Goals Accomplished
 
 - Create a full stack application
 - Publish application to the web
