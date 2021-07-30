@@ -2,7 +2,7 @@
 
 # Website URL
 
-- [https://smart-brain-detect3.herokuapp.com/](#https://smart-brain-detect3.herokuapp.com/)
+- [https://smart-brain-detect3.herokuapp.com/](https://smart-brain-detect3.herokuapp.com/)
 
 # Backend Repo
 
