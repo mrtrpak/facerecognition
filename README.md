@@ -6,7 +6,7 @@
 
 # Backend Repo
 
-- [CLICK HERE](https://github.com/mrtrpak/brainBackEnd)
+- [CLICK HERE to repo](https://github.com/mrtrpak/brainBackEnd)
 
 # Table of Contents
 
